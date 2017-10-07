@@ -1,0 +1,20 @@
+{% extends 'webportal/base.html' %}
+{% block user_title %}Atrax{% endblock %}
+
+{% block user_nav_items %}
+<li class="{% block profile_active %}{% endblock %}"><a class="ashText" href="#">Profile</a></li>
+<li class="{% block contribute_active %}{% endblock %}"><a class="ashText" href="#">Contribute</a></li>
+<li class="{% block logout_active %}{% endblock %}"><a class="ashText" href="{% url 'webportal:logout' %}">Log out</a></li>
+{% endblock %}
+
+{% block user_body %}
+<div class="parallax-container">
+    <div class="parallax"></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+</script>
+{% endblock %}

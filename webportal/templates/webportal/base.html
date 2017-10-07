@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block user_title %}Atrax{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/materialize.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse, navbar-fixed" style="position: fixed;">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar"></button>
+            <a class="navbar-brand" href="{% url 'webportal:homepage' %}">Atrax</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                {% block user_nav_items %}
+                {% endblock %}
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+{% block user_body %}
+{% endblock %}
+</body>
+</html>

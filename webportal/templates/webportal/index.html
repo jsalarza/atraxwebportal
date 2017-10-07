@@ -1,0 +1,30 @@
+{% extends 'webportal/base_visitor.html' %}
+{% block title %}Atrax{% endblock %}
+{% block nav_items %}
+<li class="{% block register_active %}{% endblock %}"><a class="ashText" href="{% url 'webportal:register'%}">Register</a></li>
+<li class="{% block login_active %}{% endblock %}"><a class="ashText" href="{% url 'webportal:login' %}">Log In</a></li>
+{% endblock %}
+
+{% block body %}
+<center>
+    <div class="parallax-container, parallax">
+        <a href="{% url 'webportal:login'%}"><button class="btn btn-success, button_color">Get Started</button></a>
+     </div>
+</center>
+
+ <div class="parallax-container">
+    <div class="parallax"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Parallax</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+
+<script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+</script>
+{% endblock %}
